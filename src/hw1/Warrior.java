@@ -7,7 +7,8 @@ public class Warrior extends Hero {
     }
 
     @Override
-    public void attackEnemy() {
-        System.out.println("Воин атакует!");;
+    public void attackEnemy(Enemy enemy) {
+        System.out.println("Воин атакует!");
+        enemy.takeDamage(35);
     }
 }

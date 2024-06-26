@@ -1,6 +1,6 @@
 package hw1;
 
-public class Hero {
+public abstract class Hero {
     private final String name;
 
     public Hero(String name) {
@@ -11,7 +11,5 @@ public class Hero {
         return name;
     }
 
-    public void attackEnemy() {
-        System.out.println("Атака!");
-    }
+    public abstract void attackEnemy(Enemy enemy);
 }
