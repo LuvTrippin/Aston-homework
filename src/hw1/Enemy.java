@@ -2,9 +2,16 @@ package hw1;
 
 public class Enemy implements Mortal {
     private int health;
+    private int damage;
 
     public Enemy(int health) {
         this.health = health;
+        this.damage = 10;
+    }
+
+    public Enemy(int health, int damage) {
+        this(health);
+        this.damage = damage;
     }
 
     public int getHealth() {
@@ -24,6 +31,11 @@ public class Enemy implements Mortal {
             return;
         }
         this.health -= damage;
+    }
+
+    public void attack(Hero hero) {
+        hero.takeDamage(this.damage);
+        System.out.println("Enemy attacked " + hero.getName());
     }
 
     @Override

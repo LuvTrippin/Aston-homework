@@ -6,6 +6,10 @@ public class Mage extends Hero{
         super(name);
     }
 
+    public Mage(String name, int health) {
+        super(name, health);
+    }
+
     @Override
     public void attackEnemy(Enemy enemy) {
         System.out.println("Маг атакует!");
