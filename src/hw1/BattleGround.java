@@ -2,7 +2,7 @@ package hw1;
 
 public class BattleGround {
     public static void main(String[] args) {
-        Hero hero = new Warrior("Thor", 20);
+        Hero hero = new Warrior("Thor", 200);
         Enemy enemy = new Zombie(10, 30);
         Enemy droid = new Droid(10, 20);
 
