@@ -13,6 +13,6 @@ public class Warrior extends Hero {
     @Override
     public void attackEnemy(Enemy enemy) {
         System.out.println("Воин атакует!");
-        enemy.takeDamage(35);
+        enemy.takeDamage(50);
     }
 }

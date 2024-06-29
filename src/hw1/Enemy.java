@@ -1,8 +1,8 @@
 package hw1;
 
-public class Enemy implements Mortal {
+public abstract class Enemy implements Mortal {
     private int health;
-    private int damage;
+    protected int damage;
 
     public Enemy(int health) {
         this.health = health;
@@ -33,10 +33,7 @@ public class Enemy implements Mortal {
         this.health -= damage;
     }
 
-    public void attack(Hero hero) {
-        hero.takeDamage(this.damage);
-        System.out.println("Enemy attacked " + hero.getName());
-    }
+    public abstract void attack(Hero hero);
 
     @Override
     public boolean isAlive() {

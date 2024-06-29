@@ -2,16 +2,36 @@ package hw1;
 
 public class BattleGround {
     public static void main(String[] args) {
-        Hero hero = new Warrior("Thor", 70);
-        Enemy enemy = new Enemy(60, 70);
+        Hero hero = new Warrior("Thor", 20);
+        Enemy enemy = new Zombie(10, 30);
+        Enemy droid = new Droid(10, 20);
 
-        hero.attackEnemy(enemy);
-        System.out.print(enemy.getHealth() + " ");
-        System.out.println(enemy.isAlive());
+        while(hero.isAlive() || (enemy.isAlive() && droid.isAlive())) {
+            hero.attackEnemy(enemy);
+            if(!enemy.isAlive() && !droid.isAlive()) {
+                System.out.println("Зомби мертв!");
+                System.out.println("Дроид отправляется на металолом!");
+                break;
+            }
 
-        enemy.attack(hero);
-        System.out.print(hero.getHealth() + " ");
-        System.out.println(hero.isAlive());
+            enemy.attack(hero);
+            if(!hero.isAlive()) {
+                System.out.printf("%s погиб \n", hero.getName());
+                break;
+            }
 
+            hero.attackEnemy(droid);
+            if(!enemy.isAlive() && !droid.isAlive()) {
+                System.out.println("Зомби мертв!");
+                System.out.println("Дроид отправляется на металолом!");
+                break;
+            }
+
+            droid.attack(hero);
+            if(!hero.isAlive()) {
+                System.out.printf("%s погиб \n", hero.getName());
+                break;
+            }
+        }
     }
 }
