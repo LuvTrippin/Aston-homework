@@ -33,6 +33,8 @@ public abstract class Enemy implements Mortal {
         this.health -= damage;
     }
 
+    public abstract void deathCry();
+
     public abstract void attack(Hero hero);
 
     @Override

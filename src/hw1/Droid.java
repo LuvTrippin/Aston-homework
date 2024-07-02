@@ -31,8 +31,15 @@ public class Droid extends Enemy {
     }
 
     @Override
+    public void deathCry() {
+        System.out.println("Дроид отправляется на металолом!");
+    }
+
+    @Override
     public void attack(Hero hero) {
         hero.takeDamage(damage);
         System.out.printf("Дроид стреляет лазерами в %s! \n", hero.getName());
     }
+
+
 }

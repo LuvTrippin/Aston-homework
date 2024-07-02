@@ -39,4 +39,9 @@ public class Zombie extends Enemy {
         }
         this.setHealth(this.getHealth() - damage);
     }
+
+    @Override
+    public void deathCry() {
+        System.out.println("Зомби умер?");
+    }
 }
