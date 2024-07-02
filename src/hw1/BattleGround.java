@@ -19,8 +19,6 @@ public class BattleGround {
     }
 
     public static void oneTurnSimulate(Hero hero, Enemy ...enemies) {
-        int defeatedEnemies = 0;
-
         for (Enemy e: enemies) {
             hero.attackEnemy(e);
             if(!e.isAlive()) {
