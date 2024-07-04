@@ -2,6 +2,7 @@ package hw1;
 
 public class Droid extends Enemy {
     private int armor;
+    private final int DEFAULT_ARMOR = 10;
 
     public Droid(int health) {
         super(health);
@@ -10,7 +11,7 @@ public class Droid extends Enemy {
 
     public Droid(int health, int damage) {
         super(health, damage);
-        this.armor = 10;
+        this.armor = DEFAULT_ARMOR;
     }
 
     @Override

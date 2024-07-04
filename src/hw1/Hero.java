@@ -4,17 +4,19 @@ public abstract class Hero implements Mortal {
     private final String name;
     private int health;
     private int damage;
+    private final int DEFAULT_HEALTH = 100;
+    private final int DEFAULT_DAMAGE = 20;
 
     public Hero(String name) {
         this.name = name;
-        this.health = 100;
-        this.damage = 20;
+        this.health = DEFAULT_HEALTH;
+        this.damage = DEFAULT_DAMAGE;
     }
 
     public Hero(String name, int health) {
         this(name);
         this.health = health;
-        this.damage = 20;
+        this.damage = DEFAULT_DAMAGE;
     }
 
     public Hero(String name, int health, int damage) {

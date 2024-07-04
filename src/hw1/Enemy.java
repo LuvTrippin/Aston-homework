@@ -3,10 +3,11 @@ package hw1;
 public abstract class Enemy implements Mortal {
     private int health;
     protected int damage;
+    private final int DEFAULT_DAMAGE = 10;
 
     public Enemy(int health) {
         this.health = health;
-        this.damage = 10;
+        this.damage = DEFAULT_DAMAGE;
     }
 
     public Enemy(int health, int damage) {
