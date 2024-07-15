@@ -53,9 +53,7 @@ public class MyLinkedList<T extends Comparable<T>> {
             return;
         }
         this.tail.next = new Node(data, this.tail);
-        System.out.println(tail.data + " " + "before");
         this.tail = this.tail.next;
-        System.out.println(tail.data + " " + "after");
         this.size++;
     }
 
@@ -95,6 +93,9 @@ public class MyLinkedList<T extends Comparable<T>> {
 
         if (pointer.prev != null) {
             pointer.prev.next = pointer.next;
+            if (pointer == this.tail) {
+                this.tail = pointer.prev;
+            }
         }
         if (pointer.next != null) {
             pointer.next.prev = pointer.prev;
